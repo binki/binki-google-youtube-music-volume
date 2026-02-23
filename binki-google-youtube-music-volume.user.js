@@ -6,8 +6,10 @@
 // @include https://music.youtube.com/*
 // ==/UserScript==
 
-// To see the custom elements’ properties, must run as content script.
-window.eval(`(${() => {
+// To see the custom elements’ properties, must run as content script. The easiest
+// way to do that is with window.eval, but YouTube added a CSP against that (see #3).
+const script = document.createElementNS(document.body.namespaceURI, 'script');
+script.textContent = `(${() => {
     const div = document.createElementNS(document.body.namespaceURI, 'div');
     div.style = 'position: absolute; left: 0; top: 0; z-index: 100;';
     document.body.append(div);
@@ -29,4 +31,5 @@ window.eval(`(${() => {
       div.append(button);
       div.append(document.createTextNode(' '));
     }
-  }})();`);
+  }})();`;
+document.head.append(script);
