@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name binki-google-youtube-music-volume
-// @version 1.0
+// @version 1.0.1
 // @author Nathan Phillip Brink (binki) (@ohnobinki)
 // homepageURL https://github.com/binki/binki-google-youtube-music-volume/
 // @include https://music.youtube.com/*
